@@ -1,0 +1,62 @@
+---
+// Supports weights 100-900
+import "@fontsource-variable/onest";
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+  description: string;
+}
+
+const {description, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] bg-cover"></div>
+    <Header />
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "Onest Variable", system-ui, sans-serif;
+  }
+
+  body {
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .typewriter {
+      overflow: hidden; /* Hide the overflowing text */
+      white-space: nowrap; /* Prevent text wrapping */
+      letter-spacing: 1px; /* Add some letter spacing for better visibility */
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+    
+    /* Animation for typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    /* Animation for blinking caret */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: transparent }
+    }
+</style>
