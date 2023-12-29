@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date:'Abril del 2023 - Actualidad',
+    title:'Desarrollador Backend - CulturaSoft',
+    description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit, praesentium natus provident ipsam harum at. Perferendis laboriosam, quod non reprehenderit natus molestiae maxime accusantium voluptatem ad nesciunt aperiam molestias?',
+    link:'#'
+  },
+  {
+    date:'Noviembre del 2021 - Septiembre del 2022',
+    title:'Auxiliar Documental de Analista de Datos - Asmet Salud EPS',
+    description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit, praesentium natus provident ipsam harum at. Perferendis laboriosam, quod non reprehenderit natus molestiae maxime accusantium voluptatem ad nesciunt aperiam molestias?',
+    link:'#'
+  }
+]
+---
+
+
+<ol class="relative border-s border-gray-200 ml-3.5">
+  {
+    EXPERIENCE.map(experience => (
+    <li class="mb-10 ms-4">
+      <ExperienceItem {...experience}/>  
+    </li>
+    ))
+  }
+</ol>
+
+

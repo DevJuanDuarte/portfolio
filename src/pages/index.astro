@@ -6,84 +6,100 @@ import LinkedIn from "../components/icons/LinkedIn.astro";
 import Github from "../components/icons/Github.astro";
 import SocialPill from "../components/icons/SocialPill.astro";
 import Mail from "../components/icons/Mail.astro";
-
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
 ---
 
 <script>
-  const typewriterElements = document.querySelectorAll('.typewriter');
 
-typewriterElements.forEach(element => {
-  const text = element.textContent;
-  let index = 0;
+  // Efecto maquina de escribir para el titulo
+  const typewriterElements = document.querySelectorAll(".typewriter");
 
-  // Function to type a single character
-  const typeCharacter = () => {
-    element.textContent = text!.slice(0, index + 1);
-    index++;
+  typewriterElements.forEach((element) => {
+    const text = element.textContent;
+    let index = 0;
 
-    if (index < text!.length) {
-      setTimeout(typeCharacter, 75); // Delay between characters
-    }
-  };
+    // Function to type a single character
+    const typeCharacter = () => {
+      element.textContent = text!.slice(0, index + 1);
+      index++;
 
-  // Start typing
-  typeCharacter();
-});
+      if (index < text!.length) {
+        setTimeout(typeCharacter, 75); // Delay between characters
+      }
+    };
+
+    // Start typing
+    typeCharacter();
+  });
 </script>
 
-<Layout title="Juan Duarte - Desarrollador y Programador Web" 
-description="Contacta conmigo para ser parte de tu equipo de trabajo.">
-  <main>
-    <section class="w-full mx-auto lg:w-[740px] py-24">
+<Layout
+  title="Juan Duarte - Desarrollador y Programador Web"
+  description="Contacta conmigo para ser parte de tu equipo de trabajo."
+>
+  <main class="px-4">
+    <SectionContainer class="py-20 pb-20">
+
+      <!-- IMAGEN Y TITULO -->
       <img
         class="rounded-full size-40 mb-4"
         src="https://media.licdn.com/dms/image/D4E03AQH9tMhL1l8vVQ/profile-displayphoto-shrink_800_800/0/1690678393403?e=1709164800&v=beta&t=Z3o6BNtsfDeEsoZ3UNVUq1oqM_ijGdcrT-ZK4OWsirM"
         alt="Foto de Juan"
       />
 
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 typewriter">
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 typewriter pb-6 lg:pb-10"
+      >
         Juan David Duarte
       </h1>
       <a
         href="https://linkedin.com/in/devjuanduarte"
         target="_blank"
-        class="flex flex-column pt-2 pb-10 "><Badge>Disponible</Badge></a
+        class="flex flex-column pt-2 pb-10"><Badge>Disponible</Badge></a
       >
-      <!-- flex flex-column pt-2 pb-10  -->
+  
 
-      <h2 class="text-2xl text-wrap">
+      <!-- INFORMACION -->
+      <h2 class="text-xl lg:text-2xl text-wrap max-w[700px]">
         <div><span class="text-yellow-200/90">Desarrollador Web</span></div>
         <div>
-          <span class="text-blue-200/90">+1 año de experiencia</span>
+          <!-- <span class="text-blue-200/90">+1 año de experiencia</span> -->
         </div>
         <div>
-          <span class="text-red-200/90">Bucaramanga, Colombia</span>
+          <span class="text-white">Bucaramanga, Colombia</span>
         </div>
-        <!-- <div><span>Especializado en crear soluciones únicas.</span></div> -->
       </h2>
 
-      <nav class="flex gap-x-4 mt-4">
+
+      <!-- REDES -->
+      <nav class="flex gap-4 mt-8 flex-wrap">
         <SocialPill
           href="https://linkedin.com/in/devjuanduarte"
           target="_blank"
         >
-          <LinkedIn class="size-6" /> LinkedIn
+          <LinkedIn class="size-4 md:size-6" /> LinkedIn
         </SocialPill>
 
         <SocialPill href="https://github.com/DevJuanDuarte" target="_blank">
-          <Github class="size-6" /> Github
+          <Github class="size-4 md:size-6" /> Github
         </SocialPill>
 
-        <SocialPill href="https://github.com/DevJuanDuarte" target="_blank">
-          <Mail class="size-6" /> juan.devcontact@gmail.com
+        <SocialPill href="mailto:juan.devcontact@gmail.com">
+          <Mail class="size-4 md:size-6" /> juan.devcontact@gmail.com
         </SocialPill>
-
-        
       </nav>
-    </section>
+    </SectionContainer>
 
-    
+    <!-- EXPERIENCIA LABORAL -->
+    <SectionContainer id="experiencia">
+      <h2 class="text-4xl font-semi-bold mb-5 flex gap-x-3 items-center">
+        <Briefcase class="size-7"/>  Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
   </main>
-
- 
 </Layout>
+
+<!-- Quedamos en minuto 1:15:12 -->

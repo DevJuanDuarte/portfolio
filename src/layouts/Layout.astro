@@ -2,12 +2,13 @@
 // Supports weights 100-900
 import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description: string;
 }
 
-const {description, title } = Astro.props;
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,10 +21,12 @@ const {description, title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <div class="absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] bg-cover"></div>
+  <body class="bg-neutral-950">
+    <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+    </div>
     <Header />
     <slot />
+    <Footer/>
   </body>
 </html>
 <style is:global>
@@ -32,31 +35,49 @@ const {description, title } = Astro.props;
   }
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {
     background: #050505;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
   .typewriter {
-      overflow: hidden; /* Hide the overflowing text */
-      white-space: nowrap; /* Prevent text wrapping */
-      letter-spacing: 1px; /* Add some letter spacing for better visibility */
-      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    overflow: hidden; /* Hide the overflowing text */
+    white-space: nowrap; /* Prevent text wrapping */
+    letter-spacing: 1px; /* Add some letter spacing for better visibility */
+    animation:
+      typing 3.5s steps(40, end),
+      blink-caret 0.75s step-end infinite;
+  }
+
+  /* Animation for typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
     }
-    
-    /* Animation for typing effect */
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    to {
+      width: 100%;
     }
-    
-    /* Animation for blinking caret */
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: transparent }
+  }
+
+  /* Animation for blinking caret */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
     }
+    50% {
+      border-color: transparent;
+    }
+  }
 </style>
