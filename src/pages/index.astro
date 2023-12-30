@@ -11,6 +11,8 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
 import Code from "../components/icons/Code.astro";
 import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import Profile from "../components/icons/Profile.astro";
 ---
 
 <script>
@@ -42,7 +44,7 @@ import Projects from "../components/Projects.astro";
   description="Contacta conmigo para ser parte de tu equipo de trabajo."
 >
   <main class="px-4">
-    <SectionContainer class="py-20 pb-20">
+    <SectionContainer  class="py-20 pb-20">
 
       <!-- IMAGEN Y TITULO -->
       <img
@@ -88,7 +90,7 @@ import Projects from "../components/Projects.astro";
         </SocialPill>
 
         <SocialPill  href="mailto:juan.devcontact@gmail.com">
-          <Mail class="size-4 md:size-6" /> juan.devcontact@gmail.com
+          <Mail class="size-4 md:size-7" /> juan.devcontact@gmail.com
         </SocialPill>
       </nav>
     </SectionContainer>
@@ -102,13 +104,20 @@ import Projects from "../components/Projects.astro";
     </SectionContainer>
 
     <!-- PROYECTOS -->
-    <SectionContainer id="experiencia" class="py-10 pb-10">
+    <SectionContainer id="proyectos" class="py-10 pb-10">
       <h2 class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center">
         <Code class="size-7"/>  Proyectos
       </h2>
       <Projects />
     </SectionContainer>
+
+    <!-- SOBRE MI -->
+    <SectionContainer id="sobre-mi" class="py-10 pb-10">
+      <h2 class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center">
+        <Profile class="size-7"/>  Sobre mí
+      </h2>
+      <About />
+    </SectionContainer>
   </main>
 </Layout>
 
-<!-- Quedamos en minuto 1:15:12 -->
