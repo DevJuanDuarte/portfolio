@@ -1,37 +1,84 @@
 ---
+import Github from "./icons/Github.astro";
+import Javascript from "./icons/Javascript.astro";
+import MySQL from "./icons/MySQL.astro";
+import Php from "./icons/Php.astro"
+import Sass from "./icons/Sass.astro";
+
+const TAGS = {
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#003159] text-white",
+    icon: MySQL,
+  },
+  PHP: {
+    name: "Php",
+    class: "bg-[#003159] text-white",
+    icon: Php,
+  },
+  JS: {
+    name: "Javascript",
+    class: "bg-[#f0db4f] pb-2 pr-3",
+    icon: Javascript,
+  },
+  SASS: {
+    name: "Javascript",
+    class: "bg-[#FFFF]",
+    icon: Sass,
+  },
+}
 const PROJECTS = [
   {
-    title: "Desarrollador Backend - CulturaSoft",
+    title: "Bienes Raices",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit, praesentium natus provident ipsam harum at. Perferendis laboriosam, quod non reprehenderit natus molestiae maxime accusantium voluptatem ad nesciunt aperiam molestias?",
-    link: "#",
-    github: "#",
-    image: "https://via.placeholder.com/300x200",
-    tags: ["PHP", "Slim", "MySQL", "PostgreSQL", "DevOps"],
+      "Administracion de venta de bienes raices, informce de ventas, precios, vendedores y bienes.",
+    link: "https://svgl.vercel.app/",
+    // github: "https://github.com/devjuanduarte/Bienes_Raices",
+    image: "/projects/bienesraices.png",
+    tags: [ TAGS.PHP, TAGS.MYSQL, TAGS.JS, TAGS.SASS],
   },
-  {
-    title: "Desarrollador Backend - CulturaSoft",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit, praesentium natus provident ipsam harum at. Perferendis laboriosam, quod non reprehenderit natus molestiae maxime accusantium voluptatem ad nesciunt aperiam molestias?",
-    link: "#",
-    github: "#",
-    image: "https://via.placeholder.com/300x200",
-    tags: ["PHP", "Slim", "MySQL", "PostgreSQL", "DevOps"],
-  },
-];
+]
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image }) => (
+  PROJECTS.map(({ image, title, description, tags }) => (
     <article>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <ul>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+        {title}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
         {tags.map((tag) => (
-          <li>{tag}</li>
+          <li>
+            <span
+              class={`flex gap-x-4 rounded-full text-xs ${tag.class} size-12 px-2 my-4 border border-white/10`}
+            >
+              <tag.icon class="size-6" />
+            </span>
+          </li>
         ))}
-        <img src={image} alt={`Captura de pantalla del proyecto ${image}`} />
       </ul>
+      <img
+        loading="lazy"
+        class="rounded shadow-2xl shadow-white/10 aspect-video w-[500px]"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+
+      <a
+      href="https://github.com/devjuanduarte/Bienes_Raices" target="_blank"
+      class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    >
+      Saber más
+      <Github class="ml-2 size-4 md:size-5"/>
+    </a>
+      
+      
     </article>
+
+
   ))
+
+
+  
 }
