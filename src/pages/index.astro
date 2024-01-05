@@ -39,12 +39,13 @@ import Contact from "../components/Contact.astro";
   });
 </script>
 
-<Layout
-  title="Juan Duarte - Desarrollador y Programador Web"
+<Layout 
+  
+  title="Juan Duarte - Analista de Datos y Desarrollador Web"
   description="Contacta conmigo para ser parte de tu equipo de trabajo."
 >
   <main class="px-4">
-    <SectionContainer class="py-20 pb-20">
+    <SectionContainer id="contacto" class="py-20 pb-20">
       <!-- IMAGEN Y TITULO -->
       <img
         class="rounded-full size-40 mb-4"
@@ -61,7 +62,7 @@ import Contact from "../components/Contact.astro";
       <a
         href="https://linkedin.com/in/devjuanduarte"
         target="_blank"
-        class="flex flex-column pt-2 pb-10"><Badge>Disponible</Badge></a
+        class="pt-2 pb-10"><Badge>Disponible</Badge></a
       >
 
       <!-- INFORMACION -->
@@ -106,6 +107,16 @@ import Contact from "../components/Contact.astro";
       <Experience />
     </SectionContainer>
 
+     <!-- SOBRE MI -->
+     <SectionContainer id="sobre-mi" class="py-10 pb-10">
+      <h2
+        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+      >
+        <Profile class="size-7" /> Sobre mí
+      </h2>
+      <About />
+    </SectionContainer>
+
     <!-- PROYECTOS -->
     <SectionContainer id="proyectos" class="py-10 pb-10">
       <h2
@@ -116,16 +127,11 @@ import Contact from "../components/Contact.astro";
       <Projects />
     </SectionContainer>
 
-    <!-- SOBRE MI -->
-    <SectionContainer id="sobre-mi" class="py-10 pb-10">
-      <h2
-        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
-      >
-        <Profile class="size-7" /> Sobre mí
-      </h2>
-      <About />
-    </SectionContainer>
-    <SectionContainer id="contacto" class="py-10 pb-10">
+   
+
+
+    <!-- CONTACTO -->
+    <!-- <SectionContainer id="contacto" class="py-10 pb-10">
     <h2
       class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center text-center"
     >
@@ -133,6 +139,6 @@ import Contact from "../components/Contact.astro";
     </h2>
     <Contact/>
 
-    <SectionContainer />
+    <SectionContainer /> -->
   </main>
 </Layout>
