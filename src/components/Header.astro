@@ -11,8 +11,10 @@
 >
   <nav
     class={`
-      border border-black rounded-full
-      px-1
+      border border-black rounded-full max-[640px]:justify-between max-[640px]:w-full max-[640px]:gap-x-2
+      mx-1
+      px-3
+      gap-x-6
       py-1
       flex flex-row
       bg-black/50
@@ -20,16 +22,16 @@
     `}
   >
     <a
-      class="hover:bg-white/10 rounded-full px-3 transition"
+      class="hover:bg-white/10 rounded-full transition"
       href="#experiencia">Experiencia</a
     >
-    <a class="hover:bg-white/10 rounded-full sm:items-center px-3 transition" href="#sobre-mi"
+    <a class="hover:bg-white/10 rounded-full sm:items-center mx-1 transition" href="#sobre-mi"
       >Sobre mí</a
     >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#proyectos"
+    <a class="hover:bg-white/10 rounded-full transition" href="#proyectos"
       >Proyectos</a
     >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#contacto"
+    <a class="hover:bg-white/10 rounded-full transition" href="#contacto"
       >Contacto</a
     >
   </nav>
