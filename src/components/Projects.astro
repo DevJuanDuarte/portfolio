@@ -44,8 +44,8 @@ const PROJECTS = [
     title: "Bienes Raices",
     description:
       "Administracion de venta de bienes raices, informe de ventas, precios, vendedores y bienes.",
-    link: "https://svgl.vercel.app/",
-    // github: "https://github.com/devjuanduarte/Bienes_Raices",
+    link: "https://github.com/DevJuanDuarte/Bienes_Raices",
+    github: "https://github.com/devjuanduarte/Bienes_Raices",
     image: "/projects/bienesraices.png",
     tags: [ TAGS.PHP, TAGS.MYSQL, TAGS.JS, TAGS.SASS],
   },
@@ -53,8 +53,8 @@ const PROJECTS = [
     title: "Control de Pacientes - Veterinaria",
     description:
       "Administracion de pacientes para citas medicas.",
-    link: "https://svgl.vercel.app/",
-    // github: "https://github.com/devjuanduarte/Bienes_Raices",
+    link: "https://github.com/DevJuanDuarte/citas-react",
+    github: "https://github.com/DevJuanDuarte/citas-react",
     image: "/projects/vetcontrol.png",
     tags: [ TAGS.REACT, TAGS.FIREBASE],
   },
@@ -62,7 +62,7 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
+  PROJECTS.map(({ image, title, description, tags, link }) => (
     <article>
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-6">
         {title}
@@ -87,7 +87,7 @@ const PROJECTS = [
       />
 
       <a
-      href={"https://github.com/devjuanduarte/Bienes_Raices"} target="_blank"
+      href={link} target="_blank"
       class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
     >
       Saber más
