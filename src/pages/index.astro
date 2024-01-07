@@ -13,35 +13,40 @@ import Code from "../components/icons/Code.astro";
 import Projects from "../components/Projects.astro";
 import About from "../components/About.astro";
 import Profile from "../components/icons/Profile.astro";
-import Contact from "../components/Contact.astro";
+import Cv from "../components/icons/Cv.astro";
 ---
 
 <script>
   // Efecto maquina de escribir para el titulo
   const typewriterElements = document.querySelectorAll(".typewriter");
-
   typewriterElements.forEach((element) => {
     const text = element.textContent;
     let index = 0;
 
-    // Function to type a single character
     const typeCharacter = () => {
       element.textContent = text!.slice(0, index + 1);
       index++;
 
       if (index < text!.length) {
-        setTimeout(typeCharacter, 75); // Delay between characters
+        setTimeout(typeCharacter, 75);
       }
     };
 
     // Start typing
     typeCharacter();
   });
+
+  //Funcion para descargar la hoja de vida:
+  const btnDescargar = document.getElementById("descargar-cv");
+
+  btnDescargar?.addEventListener("click", () => {
+    const cvUrl = "projects/pdf/Juan_Duarte_CV.pdf";
+    window.open(cvUrl, "Juan_Duarte_CV.pdf");
+  });
 </script>
 
-<Layout 
-  
-  title="Juan Duarte - Analista de Datos y Desarrollador Web"
+<Layout
+  title="Juan Duarte - Tecnólogo en Análisis y Desarrollo de Sistemas de Información y Desarrollador Web"
   description="Contacta conmigo para ser parte de tu equipo de trabajo."
 >
   <main class="px-4">
@@ -77,7 +82,7 @@ import Contact from "../components/Contact.astro";
       </h2>
 
       <!-- REDES -->
-      <nav class="text-white flex gap-2 mt-8 mx-auto">
+      <nav class="text-white flex flex-wrap gap-2 mt-8 mx-auto">
         <SocialPill
           href="https://linkedin.com/in/devjuanduarte"
           target="_blank"
@@ -90,8 +95,14 @@ import Contact from "../components/Contact.astro";
         </SocialPill>
 
         <div class="lg:mx-2">
-          <SocialPill  href="mailto:juan.devcontact@gmail.com">
+          <SocialPill href="mailto:juan.devcontact@gmail.com">
             <Mail class="size-4 md:size-7" /> juan.devcontact@gmail.com
+          </SocialPill>
+        </div>
+
+        <div class="cursor-pointer">
+          <SocialPill id="descargar-cv">
+            <Cv class="size-4 md:size-6" /> Ver CV
           </SocialPill>
         </div>
       </nav>
@@ -107,8 +118,8 @@ import Contact from "../components/Contact.astro";
       <Experience />
     </SectionContainer>
 
-     <!-- SOBRE MI -->
-     <SectionContainer id="sobre-mi" class="py-10 pb-10">
+    <!-- SOBRE MI -->
+    <SectionContainer id="sobre-mi" class="py-10 pb-10">
       <h2
         class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
       >
@@ -126,19 +137,5 @@ import Contact from "../components/Contact.astro";
       </h2>
       <Projects />
     </SectionContainer>
-
-   
-
-
-    <!-- CONTACTO -->
-    <!-- <SectionContainer id="contacto" class="py-10 pb-10">
-    <h2
-      class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center text-center"
-    >
-      <Profile class="size-7" /> Contacto
-    </h2>
-    <Contact/>
-
-    <SectionContainer /> -->
   </main>
 </Layout>
