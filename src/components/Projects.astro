@@ -2,7 +2,7 @@
 import Github from "./icons/Github.astro";
 import Javascript from "./icons/Javascript.astro";
 import MySQL from "./icons/MySQL.astro";
-import Php from "./icons/Php.astro"
+import Php from "./icons/Php.astro";
 import React from "./icons/React.astro";
 import Sass from "./icons/Sass.astro";
 import Firebase from "./icons/Firebase.astro";
@@ -38,70 +38,64 @@ const TAGS = {
     class: "bg-[#4567]",
     icon: Firebase,
   },
-}
+};
 const PROJECTS = [
-{
+  {
     title: "Bienes Raices",
     description:
       "Administracion de venta de bienes raices, informe de ventas, precios, vendedores y bienes.",
     link: "https://github.com/DevJuanDuarte/Bienes_Raices",
     github: "https://github.com/devjuanduarte/Bienes_Raices",
     image: "/projects/bienesraices.png",
-    tags: [ TAGS.PHP, TAGS.MYSQL, TAGS.JS, TAGS.SASS],
+    tags: [TAGS.PHP, TAGS.MYSQL, TAGS.JS, TAGS.SASS],
   },
   {
     title: "Control de Pacientes - Veterinaria",
-    description:
-      "Administracion de pacientes para citas medicas.",
+    description: "Administracion de pacientes para citas medicas.",
     link: "https://github.com/DevJuanDuarte/citas-react",
     github: "https://github.com/DevJuanDuarte/citas-react",
     image: "/projects/vetcontrol.png",
-    tags: [ TAGS.REACT, TAGS.FIREBASE],
+    tags: [TAGS.REACT, TAGS.FIREBASE],
   },
-]
+];
 ---
 
 {
   PROJECTS.map(({ image, title, description, tags, link }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-6">
-        {title}
-      </h3>
-      <p class="mb-2 text-base font-normal text-gray-200 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-4 rounded-full text-xs ${tag.class} size-12 px-2 my-2 border border-white/10`}
-            >
-              <tag.icon class="size-7" />
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        loading="lazy"
-        class="rounded shadow-2xl shadow-white/10 aspect-video w-full"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
+      <div class="max-w-sm bg-gray-800 p-4 m-5 border-black rounded-lg shadow dark:border-gray-700">
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-6">
+          {title}
+        </h3>
+        <p class="mb-2 text-base font-normal text-gray-200 text-pretty">
+          {description}
+        </p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-4 rounded-full text-xs ${tag.class} size-12 px-2 my-2 border border-white/10`}
+              >
+                <tag.icon class="size-7" />
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10 aspect-video w-full"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
 
-      <a
-      href={link} target="_blank"
-      class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-    >
-      Saber más
-      <Github class="ml-2 size-4 md:size-5"/>
-    </a>
-
+        <a
+          href={link}
+          target="_blank"
+          class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+        >
+          Saber más
+          <Github class="ml-2 size-4 md:size-5" />
+        </a>
       
-      
-      
-    </article>
-
-
+    </div>
   ))
-
-
-  
 }
