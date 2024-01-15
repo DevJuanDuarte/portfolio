@@ -55,14 +55,14 @@ const PROJECTS = [
     link: "https://github.com/DevJuanDuarte/citas-react",
     github: "https://github.com/DevJuanDuarte/citas-react",
     image: "/projects/vetcontrol.png",
-    tags: [TAGS.REACT, TAGS.FIREBASE],
+    tags: [TAGS.REACT],
   },
 ];
 ---
 
 {
   PROJECTS.map(({ image, title, description, tags, link }) => (
-      <div class="max-w-sm bg-gray-800 p-4 m-5 border-black rounded-lg shadow dark:border-gray-700">
+      <div class="max-w-sm bg-gray-800 p-4 m-5 border-black rounded-lg shadow dark:border-gray-700 hover:bg-gray-900 transform hover:scale-105 transition duration-300 ease-in-out">
         <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-6">
           {title}
         </h3>
