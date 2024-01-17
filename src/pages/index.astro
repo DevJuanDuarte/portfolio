@@ -13,6 +13,8 @@ import Projects from "../components/Projects.astro";
 import About from "../components/About.astro";
 import Profile from "../components/icons/Profile.astro";
 import Cv from "../components/icons/Cv.astro";
+import Book from "../components/icons/Book.astro";
+import Estudios from "../components/Estudios.astro";
 ---
 
 <script>
@@ -72,7 +74,7 @@ import Cv from "../components/icons/Cv.astro";
       <!-- INFORMACION -->
       <h2 class="text-xl lg:text-2xl text-wrap max-w[700px]">
         <div>
-          <span class="text-yellow-200/90"
+          <span class="text-blue-500"
             >Tecnólogo en Análisis y Desarrollo de Sistemas de Información.</span>
         </div>
         <div>
@@ -142,5 +144,17 @@ import Cv from "../components/icons/Cv.astro";
         <Projects />
       </div>
     </SectionContainer>
+
+
+    <!-- ESTUDIOS -->
+    <SectionContainer id="estudios">
+      <h2
+        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+      >
+        <Book class="size-7" /> Estudios
+      </h2>
+      <Estudios />
+    </SectionContainer>
+
   </main>
 </Layout>

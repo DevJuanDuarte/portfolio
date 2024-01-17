@@ -62,11 +62,11 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ image, title, description, tags, link }) => (
-      <div class="max-w-sm bg-gray-800 p-4 m-5 border-black rounded-lg shadow dark:border-gray-700 hover:bg-gray-900 transform hover:scale-105 transition duration-300 ease-in-out">
-        <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-6">
+      <div class="max-w-sm p-4 m-5 border-black rounded-lg shadow dark:border-gray-700 hover:bg-gray-800 transform hover:scale-105 transition duration-300 ease-in-out">
+        <h3 class="text-2xl font-semibold text-blue-500 mb-2 mt-6">
           {title}
         </h3>
-        <p class="mb-2 text-base font-normal text-gray-200 text-pretty">
+        <p class="mb-2 text-base font-normal text-gray-300 text-pretty">
           {description}
         </p>
         <ul class="flex gap-x-2 flex-row mb-2">
@@ -90,7 +90,7 @@ const PROJECTS = [
         <a
           href={link}
           target="_blank"
-          class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
         >
           Saber más
           <Github class="ml-2 size-4 md:size-5" />
