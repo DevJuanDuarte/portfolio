@@ -15,6 +15,7 @@ import Profile from "../components/icons/Profile.astro";
 import Cv from "../components/icons/Cv.astro";
 import Book from "../components/icons/Book.astro";
 import Estudios from "../components/Estudios.astro";
+import WhatsApp from "../components/icons/WhatsApp.astro";
 ---
 
 <script>
@@ -75,7 +76,8 @@ import Estudios from "../components/Estudios.astro";
       <h2 class="text-xl lg:text-2xl text-wrap max-w[700px]">
         <div>
           <span class="text-blue-500"
-            >Tecnólogo en Análisis y Desarrollo de Sistemas de Información.</span>
+            >Tecnólogo en Análisis y Desarrollo de Sistemas de Información.</span
+          >
         </div>
         <div>
           <!-- <span class="text-blue-200/90">+1 año de experiencia</span> -->
@@ -89,8 +91,7 @@ import Estudios from "../components/Estudios.astro";
       <nav class="text-white flex flex-wrap gap-2 mt-8 mx-auto">
         <SocialPill
           href="https://linkedin.com/in/devjuanduarte"
-          target="_blank"
-        >
+          target="_blank">
           <LinkedIn class="size-4 md:size-6" /> LinkedIn
         </SocialPill>
 
@@ -98,17 +99,19 @@ import Estudios from "../components/Estudios.astro";
           <Github class="size-4 md:size-6" /> Github
         </SocialPill>
 
-        <div class="lg:mx-2">
-          <SocialPill href="mailto:juan.devcontact@gmail.com">
-            <Mail class="size-4 md:size-7" /> juan.devcontact@gmail.com
-          </SocialPill>
-        </div>
+        <SocialPill id="descargar-cv">
+          <Cv class="size-4 md:size-6" /> CV
+        </SocialPill>
 
-        <div class="cursor-pointer">
-          <SocialPill id="descargar-cv">
-            <Cv class="size-4 md:size-6" /> Ver CV
-          </SocialPill>
-        </div>
+        <SocialPill href="https://wa.me/573005686734">
+          <WhatsApp class="size-4 md:size-7" /> WhatsApp
+        </SocialPill>
+
+        <SocialPill href="mailto:juan.devcontact@gmail.com">
+          <Mail class="size-4 md:size-7" /> Email
+        </SocialPill>
+
+        
       </nav>
     </SectionContainer>
 
@@ -145,7 +148,6 @@ import Estudios from "../components/Estudios.astro";
       </div>
     </SectionContainer>
 
-
     <!-- ESTUDIOS -->
     <SectionContainer id="estudios">
       <h2
@@ -155,6 +157,5 @@ import Estudios from "../components/Estudios.astro";
       </h2>
       <Estudios />
     </SectionContainer>
-
   </main>
 </Layout>
