@@ -1,0 +1,30 @@
+---
+import EstudiosItem from "./EstudiosItem.astro";
+const ESTUDIOS = [
+  {
+    date:'2020 - 2022',
+    title:'Tegnología en Ánalisis y Desarrollo de Sistemas de Información',
+    description:'Java · Laravel · HTML · CSS · Angular · TypeScript · PostgreSQL · SASS · Diseño UI/UX · JavaScript · Bootstrap · PHP · MySQL',
+    link:'https://drive.google.com/file/d/1E5JU3oPxWzlHrT5PXWts7siU7ZTcHNYT/view?usp=sharing'
+  },
+  {
+    date:'34.5 Horas',
+    title:'Python',
+    description:'Flask · Django',
+    link:'https://www.udemy.com/certificate/UC-97e8d097-1c41-47b3-9ca7-1c6557961b1f/'
+  }
+]
+---
+
+
+<ol class="relative border-s border-gray-200 ml-3.5">
+  {
+    ESTUDIOS.map(estudios => (
+    <li class="mb-10 ms-4">
+      <EstudiosItem {...estudios}/>  
+    </li>
+    ))
+  }
+</ol>
+
+
