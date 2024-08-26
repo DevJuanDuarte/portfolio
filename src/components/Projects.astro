@@ -6,6 +6,9 @@ import Php from "./icons/Php.astro";
 import React from "./icons/React.astro";
 import Sass from "./icons/Sass.astro";
 import Firebase from "./icons/Firebase.astro";
+import Laravel from "./icons/Laravel.astro";
+import Vue from "./icons/Vue.astro";
+import Taildwindcss from "./icons/Taildwindcss.astro";
 
 const TAGS = {
   MYSQL: {
@@ -38,6 +41,21 @@ const TAGS = {
     class: "bg-[#4567]",
     icon: Firebase,
   },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-[#4567]",
+    icon: Laravel,
+  },
+  VUE: {
+    name: "Vue",
+    class: "bg-[#4567]",
+    icon: Vue,
+  },
+  TAILDWINDCSS: {
+    name: "Taildwindcss",
+    class: "bg-[#4567]",
+    icon: Taildwindcss,
+  },
 };
 const PROJECTS = [
   {
@@ -50,52 +68,67 @@ const PROJECTS = [
     tags: [TAGS.PHP, TAGS.MYSQL, TAGS.JS, TAGS.SASS],
   },
   {
-    title: "Control de Pacientes - Veterinaria",
-    description: "Administracion de pacientes para citas medicas.",
+    title: "Papelería",
+    description: "Control de inventario para la administración de una papelería.",
+    link: "https://github.com/DevJuanDuarte/libreria_app",
+    github: "https://github.com/DevJuanDuarte/libreria_app",
+    image: "/projects/libreria.png",
+    tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.MYSQL, TAGS.TAILDWINDCSS],
+  },
+  {
+    title: " Veterinaria",
+    description: "Control de pacientes para citas medicas.",
     link: "https://github.com/DevJuanDuarte/citas-react",
     github: "https://github.com/DevJuanDuarte/citas-react",
     image: "/projects/vetcontrol.png",
     tags: [TAGS.REACT],
   },
+  
 ];
 ---
 
 {
   PROJECTS.map(({ image, title, description, tags, link }) => (
-      <div class="max-w-sm p-4 m-5 border-black rounded-lg shadow dark:border-gray-700 hover:bg-gray-800 transform hover:scale-105 transition duration-300 ease-in-out">
-        <h3 class="text-2xl font-semibold text-blue-500 mb-2 mt-6">
-          {title}
-        </h3>
-        <p class="mb-2 text-base font-normal text-gray-300 text-pretty">
-          {description}
-        </p>
-        <ul class="flex gap-x-2 flex-row mb-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-4 rounded-full text-xs ${tag.class} size-12 px-2 my-2 border border-white/10`}
-              >
-                <tag.icon class="size-7" />
-              </span>
-            </li>
-          ))}
-        </ul>
-        <img
-          loading="lazy"
-          class="rounded shadow-2xl shadow-white/10 aspect-video w-full"
-          src={image}
-          alt={`Captura de pantalla del proyecto ${image}`}
-        />
+  <div class="flex flex-col lg:flex-row max-w-full p-4 m-5 border-black rounded-lg shadow dark:border-gray-700 hover:bg-gray-900 transform hover:scale-105 transition duration-300 ease-in-out">
+  <!-- Sección de Imagen y Botón -->
+  <div class="flex flex-col items-center lg:items-start lg:w-1/2">
+    <img
+      loading="lazy"
+      class="rounded shadow-2xl shadow-white/10 aspect-video w-full lg:w-auto"
+      src={image}
+      alt={`Captura de pantalla del proyecto ${image}`}
+    />
+    <a
+      href={link}
+      target="_blank"
+      class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    >
+      Saber más
+      <Github class="ml-2 size-4 md:size-5" />
+    </a>
+  </div>
 
-        <a
-          href={link}
-          target="_blank"
-          class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-        >
-          Saber más
-          <Github class="ml-2 size-4 md:size-5" />
-        </a>
-      
-    </div>
+  <!-- Sección de Texto -->
+  <div class="flex flex-col lg:w-1/2 lg:pl-4 mt-4 lg:mt-0">
+    <h3 class="text-2xl font-semibold text-blue-500 mb-2">
+      {title}
+    </h3>
+    <p class="mb-2 text-base font-normal text-gray-300 text-pretty">
+      {description}
+    </p>
+    <ul class="flex gap-x-2 flex-row mb-2">
+      {tags.map((tag) => (
+        <li>
+          <span
+            class={`flex gap-x-4 rounded-full text-xs ${tag.class} size-12 px-2 my-2 border border-white/10`}
+          >
+            <tag.icon class="size-7" />
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
   ))
 }

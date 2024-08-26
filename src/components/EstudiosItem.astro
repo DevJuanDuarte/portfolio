@@ -4,8 +4,9 @@ interface Props {
   description: string;
   link?: string;
   date: string;
+  date2: string;
 }
-const { title, description, link, date } = Astro.props;
+const { title, description, link, date, date2 } = Astro.props;
 ---
 
 <div
@@ -13,7 +14,9 @@ const { title, description, link, date } = Astro.props;
 >
 </div>
 <time class="mb-1 text-sm font-normal leading-none text-sky-200/80">{date}</time
->
+  >
+  <p class="mb-1 text-sm font-normal leading-none text-sky-200/80">{date2}</p
+    >
 <h3 class="text-lg font-semibold text-blue-500 dark:text-white">
   {title}
 </h3>
