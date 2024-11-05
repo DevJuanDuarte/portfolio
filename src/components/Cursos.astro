@@ -1,0 +1,26 @@
+---
+import EstudiosItem from "./EstudiosItem.astro";
+
+const CURSOS = [
+  {
+    // date:'36 Horas',
+    date2:'Udemy',
+    title:'Python',
+    description:' Django · Flask · Sqlite',
+    link:'https://www.udemy.com/certificate/UC-97e8d097-1c41-47b3-9ca7-1c6557961b1f/'
+  }
+]
+---
+
+
+<ol class="relative border-s border-gray-200 ml-3.5">
+  {
+    CURSOS.map(cursos => (
+    <li class="mb-10 ms-4">
+      <EstudiosItem {...cursos}/>  
+    </li>
+    ))
+  }
+</ol>
+
+

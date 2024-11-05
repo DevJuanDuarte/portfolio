@@ -16,6 +16,7 @@ import Cv from "../components/icons/Cv.astro";
 import Book from "../components/icons/Book.astro";
 import Estudios from "../components/Estudios.astro";
 import WhatsApp from "../components/icons/WhatsApp.astro";
+import Cursos from "../components/Cursos.astro";
 ---
 
 <script>
@@ -42,7 +43,7 @@ import WhatsApp from "../components/icons/WhatsApp.astro";
   const btnDescargar = document.getElementById("descargar-cv");
 
   btnDescargar?.addEventListener("click", () => {
-    const cvUrl = "projects/pdf/Juan_Duarte_CV.pdf";
+    const cvUrl = "projects/pdf/JuanDavidDuarteHernandezCV.pdf";
     window.open(cvUrl, "Juan_Duarte_CV.pdf");
   });
 </script>
@@ -67,18 +68,18 @@ import WhatsApp from "../components/icons/WhatsApp.astro";
       </h1>
 
       <div class="pb-10 pt-2">
-        <a href="https://linkedin.com/in/devjuanduarte" target="_blank"><Badge>Disponible</Badge></a>
+        <a href="https://linkedin.com/in/devjuanduarte" target="_blank"
+          ><Badge>Disponible</Badge></a
+        >
       </div>
 
       <!-- INFORMACION -->
       <h2 class="text-xl lg:text-2xl text-wrap max-w[700px]">
         <div>
-          <span class="text-blue-500"
-            >FullStack Developer👨🏻‍💻</span
-          >
+          <span class="text-blue-500">Desarrollador Full Stack</span>
         </div>
         <div>
-          <!-- <span class="text-blue-200/90">+1 año de experiencia</span> -->
+          <span class="text-blue-200/90">+2 años de experiencia</span>
         </div>
         <div>
           <span class="text-white">Bucaramanga, Colombia.</span>
@@ -87,18 +88,15 @@ import WhatsApp from "../components/icons/WhatsApp.astro";
 
       <!-- REDES -->
       <nav class="text-white flex flex-wrap gap-2 mt-8 mx-auto">
+        <SocialPill id="descargar-cv">
+          <Cv class="size-4 md:size-6 cursor-pointer" /> Ver CV
+        </SocialPill>
+
         <SocialPill
           href="https://linkedin.com/in/devjuanduarte"
-          target="_blank">
+          target="_blank"
+        >
           <LinkedIn class="size-4 md:size-6" /> LinkedIn
-        </SocialPill>
-
-        <SocialPill href="https://github.com/DevJuanDuarte" target="_blank">
-          <Github class="size-4 md:size-6" /> Github
-        </SocialPill>
-
-        <SocialPill id="descargar-cv">
-          <Cv class="size-4 md:size-6 cursor-pointer" /> CV
         </SocialPill>
 
         <SocialPill href="https://wa.me/573027342616">
@@ -109,7 +107,11 @@ import WhatsApp from "../components/icons/WhatsApp.astro";
           <Mail class="size-4 md:size-7" /> Email
         </SocialPill>
 
-        
+        <SocialPill href="https://github.com/DevJuanDuarte" target="_blank">
+          <Github class="size-4 md:size-6" /> Github
+        </SocialPill>
+
+       
       </nav>
     </SectionContainer>
 
@@ -144,7 +146,6 @@ import WhatsApp from "../components/icons/WhatsApp.astro";
       <div class="grid grid-cols-1 lg:grid-cols-1 justify-center">
         <Projects />
       </div>
-      
     </SectionContainer>
 
     <!-- ESTUDIOS -->
@@ -155,6 +156,16 @@ import WhatsApp from "../components/icons/WhatsApp.astro";
         <Book class="size-7" /> Estudios
       </h2>
       <Estudios />
+    </SectionContainer>
+
+    <!-- CURSOS -->
+    <SectionContainer id="estudios">
+      <h2
+        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+      >
+        <Book class="size-7" /> Cursos
+      </h2>
+      <Cursos />
     </SectionContainer>
   </main>
 </Layout>
