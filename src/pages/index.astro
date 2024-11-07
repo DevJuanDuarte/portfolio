@@ -20,28 +20,69 @@ import Cursos from "../components/Cursos.astro";
 ---
 
 <script>
-  // Efecto maquina de escribir para el titulo
+
+  //Efecto maquina de escribir
+  const typewriterContainer = document.createElement("div");
+  typewriterContainer.style.height = "1.5em";
+  typewriterContainer.style.display = "flex";
+  typewriterContainer.style.alignItems = "center";
+
   const typewriterElements = document.querySelectorAll(".typewriter");
   typewriterElements.forEach((element) => {
-    const text = element.textContent;
-    let index = 0;
+    // Envolvemos el elemento original en el contenedor
+    element.parentNode?.insertBefore(typewriterContainer, element);
+    typewriterContainer.appendChild(element);
+
+    const phrases = [
+      "+2 años de experiencia",
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
     const typeCharacter = () => {
-      element.textContent = text!.slice(0, index + 1);
-      index++;
+      const currentPhrase = phrases[phraseIndex];
 
-      if (index < text!.length) {
-        setTimeout(typeCharacter, 75);
+      // Si hemos llegado al final de todas las frases, nos detenemos
+      if (
+        phraseIndex === phrases.length - 1 &&
+        charIndex === currentPhrase.length
+      ) {
+        return; // Esta línea detiene la recursión
       }
+
+      if (!isDeleting) {
+        element.textContent = currentPhrase.slice(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentPhrase.length) {
+          // Si no es la última frase, procedemos a borrar
+          if (phraseIndex < phrases.length - 1) {
+            isDeleting = true;
+            setTimeout(typeCharacter, 1500);
+            return;
+          }
+        }
+      } else {
+        element.textContent = currentPhrase.slice(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex++;
+        }
+      }
+
+      const speed = isDeleting ? 50 : 100;
+      setTimeout(typeCharacter, speed);
     };
 
-    // Start typing
     typeCharacter();
   });
 
-  //Funcion para descargar la hoja de vida:
+  //Descargar la hoja de vida:
   const btnDescargar = document.getElementById("descargar-cv");
-
   btnDescargar?.addEventListener("click", () => {
     const cvUrl = "projects/pdf/JuanDavidDuarteHernandezCV.pdf";
     window.open(cvUrl, "Juan_Duarte_CV.pdf");
@@ -49,7 +90,7 @@ import Cursos from "../components/Cursos.astro";
 </script>
 
 <Layout
-  title="Juan Duarte - Desarrollador Web"
+  title="Juan David - Desarrollador Full Stack"
   description="Contacta conmigo para ser parte de tu equipo de trabajo."
 >
   <main class="px-4">
@@ -62,7 +103,7 @@ import Cursos from "../components/Cursos.astro";
       />
 
       <h1
-        class="text-3xl md:text-4xl lg:text-5xl text-white font-bold flex flex-row gap-x-4 typewriter"
+        class="text-3xl md:text-4xl lg:text-5xl text-white font-bold flex flex-row gap-x-4"
       >
         Juan David Duarte
       </h1>
@@ -79,7 +120,7 @@ import Cursos from "../components/Cursos.astro";
           <span class="text-blue-500">Desarrollador Full Stack</span>
         </div>
         <div>
-          <span class="text-blue-200/90">+2 años de experiencia</span>
+          <span class="text-blue-200/90 typewriter"></span>
         </div>
         <div>
           <span class="text-white">Bucaramanga, Colombia.</span>
@@ -110,8 +151,6 @@ import Cursos from "../components/Cursos.astro";
         <SocialPill href="https://github.com/DevJuanDuarte" target="_blank">
           <Github class="size-4 md:size-6" /> Github
         </SocialPill>
-
-       
       </nav>
     </SectionContainer>
 
