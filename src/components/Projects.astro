@@ -7,6 +7,7 @@ import React from "./icons/React.astro";
 import Sass from "./icons/Sass.astro";
 import Firebase from "./icons/Firebase.astro";
 import Laravel from "./icons/Laravel.astro";
+import Angular from "./icons/Angular.astro";
 import Vue from "./icons/Vue.astro";
 import Taildwindcss from "./icons/Taildwindcss.astro";
 
@@ -56,8 +57,21 @@ const TAGS = {
     class: "bg-[#4567]",
     icon: Taildwindcss,
   },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#4567]",
+    icon: Angular,
+  },
 };
 const PROJECTS = [
+{
+    title: "Users App",
+    description: "Gestión de usuarios, autenticación, administracion de posts.",
+    link: "https://github.com/DevJuanDuarte/usuarios_frontend",
+    github: "https://github.com/DevJuanDuarte/usuarios_frontend",
+    image: "/projects/login.png",
+    tags: [TAGS.ANGULAR, TAGS.PHP, TAGS.MYSQL, TAGS.TAILDWINDCSS],
+  },
   {
     title: "Papelería",
     description: "Control de inventario para la administración de una papelería.",
@@ -88,36 +102,37 @@ const PROJECTS = [
 ];
 ---
 
-{
-  PROJECTS.map(({ image, title, description, tags, link }) => (
-  <div class="flex flex-col lg:flex-row max-w-full p-4 m-5 border-black rounded-lg shadow dark:border-gray-700 hover:bg-gray-900 transform hover:scale-105 transition duration-300 ease-in-out">
-  <!-- Sección de Imagen y Botón -->
-  <div class="flex flex-col items-center lg:items-start lg:w-1/2">
-    <img
-      loading="lazy"
-      class="rounded shadow-2xl shadow-white/10 aspect-video w-full lg:w-auto"
-      src={image}
-      alt={`Captura de pantalla del proyecto ${image}`}
-    />
-    <a
-      href={link}
-      target="_blank"
-      class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-    >
-      Saber más
-      <Github class="ml-1 size-2 md:size-5" />
-    </a>
-  </div>
+<div class="grid gap-6 p-6 lg:grid-cols-2">
+  {PROJECTS.map(({ image, title, description, tags, link }) => (
+    <div class="flex flex-col max-w-full p-4 border border-gray-700 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-800 dark:border-gray-700 dark:bg-gray-900">
+      <!-- Imagen del proyecto -->
+      <img
+        loading="lazy"
+        class="rounded shadow-lg aspect-video w-full"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title}`}
+      />
 
-  <!-- Sección de Texto -->
-  <div class="flex flex-col lg:w-1/2 lg:pl-4 mt-4 lg:mt-0">
-    <h3 class="text-2xl font-semibold text-blue-500 mb-2">
-      {title}
-    </h3>
-    <p class="mb-2 text-base font-normal text-gray-300 text-pretty">
-      {description}
-    </p>
-    <ul class="flex gap-x-2 flex-row mb-2">
+      <!-- Contenido de texto -->
+      <div class="flex flex-col mt-4 space-y-4">
+        <h3 class="text-2xl font-semibold text-blue-500">
+          {title}
+        </h3>
+        <p class="text-base font-normal text-gray-300">
+          {description}
+        </p>
+
+        <!-- Etiquetas de tecnología -->
+        {/* <ul class="flex gap-2 flex-wrap">
+          {tags.map((tag) => (
+            <li>
+              <span class={`flex items-center gap-1 rounded-full text-xs ${tag.class} px-2 py-1 border border-white/10`}>
+                <tag.icon class="w-5 h-5" />
+              </span>
+            </li>
+          ))}
+        </ul> */}
+        <ul class="flex gap-x-2 flex-row mb-2">
       {tags.map((tag) => (
         <li>
           <span
@@ -128,8 +143,18 @@ const PROJECTS = [
         </li>
       ))}
     </ul>
-  </div>
+
+        <!-- Botón "Saber más" en móviles debajo de la descripción -->
+        <a
+          href={link}
+          target="_blank"
+          class="flex items-center justify-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        >
+          Saber más
+          <Github class="ml-2 w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  ))}
 </div>
 
-  ))
-}
