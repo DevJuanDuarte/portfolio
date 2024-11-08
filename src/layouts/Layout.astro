@@ -20,6 +20,13 @@ const { description, title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/1F468-1F3FB-200D-1F4BB.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://devjuanduarte.com/images/linkedin_profile.png" />
+    <meta property="og:url" content="https://devjuanduarte.com/" />
+    <meta property="og:type" content="website" />
   </head>
   <body class="bg-neutral-950">
     <div
