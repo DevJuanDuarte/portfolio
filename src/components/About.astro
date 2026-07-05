@@ -8,16 +8,16 @@ const { lang } = Astro.props;
 const { t } = useTranslations(lang);
 ---
 
-<p class="text-gray-300">
+<p class="text-gray-700 dark:text-gray-300">
   {t("about.p1")}
 </p>
 <div class="inline-flex items-center justify-center w-full">
-  <hr class="w-64 h-1 my-8 border-0 rounded dark:bg-gray-700" />
+  <hr class="w-64 h-1 my-8 border-0 rounded bg-gray-200 dark:bg-gray-700" />
   <div
-    class="absolute px-4 -translate-x-1/2 left-1/2 dark:bg-gray-900"
+    class="absolute px-4 -translate-x-1/2 left-1/2 bg-white dark:bg-gray-900"
   >
     <svg
-      class="w-4 h-4 text-gray-700 dark:text-gray-300"
+      class="w-4 h-4 text-gray-400 dark:text-gray-300"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
@@ -29,6 +29,6 @@ const { t } = useTranslations(lang);
     </svg>
   </div>
 </div>
-<p class="text-gray-300">
+<p class="text-gray-700 dark:text-gray-300">
   {t("about.p2")}
 </p>

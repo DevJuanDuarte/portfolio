@@ -1,6 +1,7 @@
 ---
 import { useTranslations, type Lang } from "../i18n";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 
 export interface Props {
   lang: Lang;
@@ -10,41 +11,25 @@ const { t } = useTranslations(lang);
 ---
 
 <header
-  class={`
-    flex justify-center items-center
-    mx-auto
-    py-5
-    sticky top-0
-    w-full xl:w-[1120px]
-    z-10
-    text-white
-  `}
+  class="flex justify-center items-center mx-auto py-5 sticky top-0 w-full xl:w-[1120px] z-10 text-gray-900 dark:text-white"
 >
   <nav
-    class={`
-      border border-black rounded-full max-[640px]:justify-between max-[640px]:w-full max-[640px]:gap-x-2
-      mx-1
-      px-3
-      gap-x-6
-      py-1
-      flex flex-row items-center
-      bg-black/50
-      backdrop-blur-2xl
-    `}
+    class="border border-gray-200 dark:border-black rounded-full max-[640px]:justify-between max-[640px]:w-full max-[640px]:gap-x-2 mx-1 px-3 gap-x-6 py-1 flex flex-row items-center bg-white/80 dark:bg-black/50 backdrop-blur-2xl"
   >
     <a
-      class="hover:bg-white/10 lg:px-2 rounded-full transition"
+      class="hover:bg-gray-100 dark:hover:bg-white/10 lg:px-2 rounded-full transition"
       href="#experiencia">{t("nav.experience")}</a
     >
-    <a class="hover:bg-white/10 lg:px-2 rounded-full transition" href="#sobre-mi"
+    <a class="hover:bg-gray-100 dark:hover:bg-white/10 lg:px-2 rounded-full transition" href="#sobre-mi"
       >{t("nav.about")}</a
     >
-    <a class="hover:bg-white/10 lg:px-2 rounded-full transition" href="#proyectos"
+    <a class="hover:bg-gray-100 dark:hover:bg-white/10 lg:px-2 rounded-full transition" href="#proyectos"
       >{t("nav.projects")}</a
     >
-    <a class="hover:bg-white/10 lg:px-2 rounded-full transition" href="#estudios"
+    <a class="hover:bg-gray-100 dark:hover:bg-white/10 lg:px-2 rounded-full transition" href="#estudios"
       >{t("nav.studies")}</a
     >
+    <ThemeToggle />
     <LanguageSwitcher lang={lang} />
   </nav>
 </header>

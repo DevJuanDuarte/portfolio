@@ -29,10 +29,20 @@ const { description, title, lang = 'es' } = Astro.props;
     />
     <meta property="og:url" content="https://devjuanduarte.com/" />
     <meta property="og:type" content="website" />
+
+    <script is:inline>
+      (function() {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-neutral-950">
+  <body class="bg-white dark:bg-neutral-950 transition-colors duration-300">
     <div
-      class="absolute top-0 z-[-2] size-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(40,70,198,0.4),rgba(255,255,255,0))]"
+      class="absolute top-0 z-[-2] size-full bg-gradient-to-b from-blue-50/80 to-transparent dark:from-transparent dark:to-transparent dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(40,70,198,0.4),rgba(255,255,255,0))]"
     >
     </div>
   </body>
@@ -51,7 +61,6 @@ const { description, title, lang = 'es' } = Astro.props;
   }
 
   body {
-    background: #050505;
     display: flex;
     flex-direction: column;
     min-height: 100vh;

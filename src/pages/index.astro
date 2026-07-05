@@ -69,7 +69,7 @@ const { t } = useTranslations(lang);
       />
 
       <h1
-        class="text-3xl md:text-4xl lg:text-5xl text-white font-bold flex flex-row gap-x-4"
+        class="text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white font-bold flex flex-row gap-x-4"
       >
         Juan David Duarte
       </h1>
@@ -82,17 +82,17 @@ const { t } = useTranslations(lang);
 
       <h2 class="text-xl lg:text-2xl text-wrap max-w[700px]">
         <div>
-          <span class="text-blue-500">{t("hero.role")}</span>
+          <span class="text-blue-600 dark:text-blue-500">{t("hero.role")}</span>
         </div>
         <div>
-          <span class="text-blue-200/90 typewriter" data-phrase={t("hero.typewriter")}></span>
+          <span class="text-blue-600/90 dark:text-blue-200/90 typewriter" data-phrase={t("hero.typewriter")}></span>
         </div>
         <div>
-          <span class="text-white">{t("hero.location")}</span>
+          <span class="text-gray-900 dark:text-white">{t("hero.location")}</span>
         </div>
       </h2>
 
-      <nav class="text-white flex flex-wrap gap-2 mt-8 mx-auto">
+      <nav class="flex flex-wrap gap-2 mt-8 mx-auto">
         <SocialPill id="descargar-cv">
           <Cv class="size-4 md:size-6 cursor-pointer" /> {t("hero.cv")}
         </SocialPill>
@@ -120,7 +120,7 @@ const { t } = useTranslations(lang);
 
     <SectionContainer id="experiencia">
       <h2
-        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+        class="text-gray-900 dark:text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
       >
         <Briefcase class="size-7" /> {t("sections.experience")}
       </h2>
@@ -129,7 +129,7 @@ const { t } = useTranslations(lang);
 
     <SectionContainer id="sobre-mi" class="py-10 pb-10">
       <h2
-        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+        class="text-gray-900 dark:text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
       >
         <Profile class="size-7" /> {t("sections.about")}
       </h2>
@@ -138,7 +138,7 @@ const { t } = useTranslations(lang);
 
     <SectionContainer id="proyectos" class="py-10 pb-10">
       <h2
-        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+        class="text-gray-900 dark:text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
       >
         <Code class="size-7" /> {t("sections.projects")}
       </h2>
@@ -150,7 +150,7 @@ const { t } = useTranslations(lang);
 
     <SectionContainer id="estudios">
       <h2
-        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+        class="text-gray-900 dark:text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
       >
         <Book class="size-7" /> {t("sections.studies")}
       </h2>
@@ -159,7 +159,7 @@ const { t } = useTranslations(lang);
 
     <SectionContainer id="estudios">
       <h2
-        class="text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
+        class="text-gray-900 dark:text-white text-3xl lg:text-4xl font-semi-bold mb-5 flex gap-x-3 items-center"
       >
         <Book class="size-7" /> {t("sections.courses")}
       </h2>
