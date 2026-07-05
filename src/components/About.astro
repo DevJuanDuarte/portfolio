@@ -1,5 +1,15 @@
+---
+import { useTranslations, type Lang } from "../i18n";
+
+export interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const { t } = useTranslations(lang);
+---
+
 <p class="text-gray-300">
-  Soy muy apasionado y competitivo, con capacidades de liderazgo y trabajo en equipo. Aprendo cualquier cosa que me proponga de manera muy rápida. Me gusta destacar, soy bastante respetuoso, comunicativo, optimista, perfeccionista y capaz de trabajar en situaciones de presión y estrés.
+  {t("about.p1")}
 </p>
 <div class="inline-flex items-center justify-center w-full">
   <hr class="w-64 h-1 my-8 border-0 rounded dark:bg-gray-700" />
@@ -20,5 +30,5 @@
   </div>
 </div>
 <p class="text-gray-300">
-  Actualmente estoy en busca de nuevos proyectos emocionantes para llevar a cabo como desarrollador web. Con una sólida experiencia en la creación de sitios web atractivos y funcionales desde el pre-proceso hasta el lanzamiento,  estoy comprometido a brindar soluciones personalizadas que se adapten a las necesidades específicas de cada cliente.
+  {t("about.p2")}
 </p>

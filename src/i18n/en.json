@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "experience": "Experience",
+    "about": "About me",
+    "projects": "Projects",
+    "studies": "Studies"
+  },
+  "hero": {
+    "available": "Available",
+    "role": "Full Stack Developer",
+    "location": "Bucaramanga, Colombia.",
+    "typewriter": "+3 years of experience",
+    "cv": "View Resume",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "github": "Github"
+  },
+  "sections": {
+    "experience": "Work Experience",
+    "about": "About me",
+    "projects": "Personal Projects",
+    "studies": "Education",
+    "courses": "Courses"
+  },
+  "about": {
+    "p1": "I am very passionate and competitive, with leadership and teamwork skills. I can quickly learn anything I set my mind to. I like to stand out, I am very respectful, communicative, optimistic, perfectionist, and able to work under pressure and stress.",
+    "p2": "I am currently looking for new exciting projects to carry out as a web developer. With solid experience in creating attractive and functional websites from pre-processing to launch, I am committed to providing customized solutions that meet the specific needs of each client."
+  },
+  "experience": [
+    {
+      "date": "December 2024 - Present",
+      "title": "Full Stack Developer - Growing Network",
+      "description": "I develop and maintain web applications for the public sector using Laravel, React and MySQL. I have worked on key tax management systems for the Department of Bolívar (Colombia). I have also participated in the development of mobility projects for different transit offices of the Government of Bolívar, as well as for the Transit Office of Girón (Santander). I have also collaborated on document management solutions for healthcare institutions. Additionally, I participate in projects focused on livestock management and associated tax administration."
+    },
+    {
+      "date": "April 2023 - August 2024",
+      "title": "Full Stack Developer - CulturaSoft S.A.S",
+      "description": "I participated in the maintenance and refactoring of methods and queries to improve performance in native projects with PHP 7.4 and JavaScript, achieving response times up to 50% faster. I managed databases with PostgreSQL and MySQL, optimizing queries and table structures for better performance. I provided technical support, solving problems and improving system stability to ensure an optimal user experience. I built dynamic modules in new projects with Angular seamlessly connecting to PHP APIs using the Slim framework. I developed new APIs from scratch with Golang, demonstrating my versatility and ability to adapt to different programming languages. I collaborated using Azure DevOps for agile project management, including task tracking, sprint planning, and team collaboration."
+    },
+    {
+      "date": "November 2021 - September 2022",
+      "title": "Document Assistant & Data Analyst - Asmet Salud EPS",
+      "description": "I participated in the company's database reengineering by migrating the database from Excel to MySQL, and provided technical and document support in the Risk and Contracting sector."
+    }
+  ],
+  "experienceButton": "Learn more",
+  "projects": [
+    {
+      "title": "Users App",
+      "description": "User management, authentication, post administration."
+    },
+    {
+      "title": "Stationery Store",
+      "description": "Inventory control for the management of a stationery store."
+    },
+    {
+      "title": "Real Estate",
+      "description": "Real estate sales management, sales reports, prices, sellers and properties."
+    },
+    {
+      "title": "Veterinary",
+      "description": "Patient management for medical appointments."
+    }
+  ],
+  "projectButton": "Learn more",
+  "projectAlt": "Screenshot of the project",
+  "studies": [
+    {
+      "date": "2025 - Present",
+      "date2": "Corporación Unificada Nacional de Educación Superior (CUN)",
+      "title": "Systems Engineering",
+      "description": "Ninth semester currently in progress."
+    },
+    {
+      "date": "2020 - 2022",
+      "date2": "Servicio Nacional de Aprendizaje (SENA).",
+      "title": "Technology in Analysis and Development of Information Systems",
+      "description": "PHP · JavaScript · TypeScript · Angular · Slim · Java · PostgreSQL · MySQL · Bootstrap · UI/UX Design"
+    }
+  ],
+  "studiesButton": "Certificate",
+  "courses": [
+    {
+      "date2": "Udemy",
+      "title": "Python",
+      "description": "Django · Flask · Sqlite",
+      "link": "https://www.udemy.com/certificate/UC-97e8d097-1c41-47b3-9ca7-1c6557961b1f/"
+    }
+  ],
+  "coursesButton": "Certificate",
+  "footer": "© {year} - Juan David Duarte Hernández.",
+  "meta": {
+    "title": "Juan David - Full Stack Developer",
+    "description": "Contact me to be part of your work team."
+  }
+}

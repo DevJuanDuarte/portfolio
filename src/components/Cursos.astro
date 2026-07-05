@@ -1,26 +1,33 @@
 ---
+import { useTranslations, type Lang } from "../i18n";
 import EstudiosItem from "./EstudiosItem.astro";
 
-const CURSOS = [
-  {
-    // date:'36 Horas',
-    date2:'Udemy',
-    title:'Python',
-    description:' Django · Flask · Sqlite',
-    link:'https://www.udemy.com/certificate/UC-97e8d097-1c41-47b3-9ca7-1c6557961b1f/'
-  }
-]
+export interface Props {
+  lang: Lang;
+}
+interface CursoData {
+  title: string;
+  description: string;
+  date2: string;
+  link?: string;
+}
+const { lang } = Astro.props;
+const { tArray } = useTranslations(lang);
+const CURSOS = tArray<CursoData>("courses");
 ---
-
 
 <ol class="relative border-s border-gray-200 ml-3.5">
   {
-    CURSOS.map(cursos => (
+    CURSOS.map((curso) => (
     <li class="mb-10 ms-4">
-      <EstudiosItem {...cursos}/>  
+      <EstudiosItem
+        title={curso.title}
+        description={curso.description}
+        date2={curso.date2}
+        link={curso.link}
+        lang={lang}
+      />
     </li>
     ))
   }
 </ol>
-
-

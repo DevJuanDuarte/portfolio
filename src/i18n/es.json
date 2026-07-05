@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "experience": "Experiencia",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "studies": "Estudios"
+  },
+  "hero": {
+    "available": "Disponible",
+    "role": "Desarrollador Full Stack",
+    "location": "Bucaramanga, Colombia.",
+    "typewriter": "+3 años de experiencia",
+    "cv": "Ver CV",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "github": "Github"
+  },
+  "sections": {
+    "experience": "Experiencia Laboral",
+    "about": "Sobre mí",
+    "projects": "Proyectos Personales",
+    "studies": "Estudios",
+    "courses": "Cursos"
+  },
+  "about": {
+    "p1": "Soy muy apasionado y competitivo, con capacidades de liderazgo y trabajo en equipo. Aprendo cualquier cosa que me proponga de manera muy rápida. Me gusta destacar, soy bastante respetuoso, comunicativo, optimista, perfeccionista y capaz de trabajar en situaciones de presión y estrés.",
+    "p2": "Actualmente estoy en busca de nuevos proyectos emocionantes para llevar a cabo como desarrollador web. Con una sólida experiencia en la creación de sitios web atractivos y funcionales desde el pre-proceso hasta el lanzamiento, estoy comprometido a brindar soluciones personalizadas que se adapten a las necesidades específicas de cada cliente."
+  },
+  "experience": [
+    {
+      "date": "Diciembre del 2024 - Actualidad",
+      "title": "Desarrollador Full Stack - Growing Network",
+      "description": "Desarrollo y mantengo aplicaciones web para el sector público utilizando Laravel, React y MySQL. He trabajado en sistemas clave para la gestión de impuestos del Departamento de Bolívar (Colombia). Asimismo, he participado en el desarrollo de proyectos de movilidad para las diferentes secretarías de tránsito de la Gobernación de Bolívar, así como para la Secretaría de Tránsito de Girón (Santander). También he colaborado en soluciones de gestión documental para instituciones de salud. Además, participo en proyectos orientados a la gestión de ganadería y la administración de los impuestos asociados."
+    },
+    {
+      "date": "Abril del 2023 - Agosto del 2024",
+      "title": "Desarrollador Full Stack - CulturaSoft S.A.S",
+      "description": "Participé en el mantenimiento y refactorización de métodos y consultas para mejorar el rendimiento en proyectos nativos con PHP 7.4 y JavaScript, logrando tiempos de respuesta hasta un 50% más rápido. Manejé bases de datos con PostgreSQL y MySQL, optimizando consultas y estructuras de tablas para un mejor rendimiento. Brindé soporte técnico, resolviendo problemas y mejorando la estabilidad de los sistemas para asegurar una experiencia de usuario óptima. Construí módulos dinámicos en nuevos proyectos con Angular conectándose sin problemas con APIs en PHP con el framework de Slim. Desarrollé nuevas APIS desde cero con Golang, demostrando mi versatilidad y capacidad para adaptarme a diferentes lenguajes de programación. Colaboré mediante Azure DevOps para la gestión ágil del proyecto, incluyendo el seguimiento de tareas, planificación de sprints y colaboración en equipo."
+    },
+    {
+      "date": "Noviembre del 2021 - Septiembre del 2022",
+      "title": "Auxiliar Documental de Analista de Datos - Asmet Salud EPS",
+      "description": "Participé en la reingeniería de la base de datos de la empresa migrando la base de datos de Excel a MySQL y brindar soporte técnico y documental en el sector de Riesgos y Contratación."
+    }
+  ],
+  "experienceButton": "Saber más",
+  "projects": [
+    {
+      "title": "Users App",
+      "description": "Gestión de usuarios, autenticación, administración de posts."
+    },
+    {
+      "title": "Papelería",
+      "description": "Control de inventario para la administración de una papelería."
+    },
+    {
+      "title": "Bienes Raíces",
+      "description": "Administración de venta de bienes raíces, informe de ventas, precios, vendedores y bienes."
+    },
+    {
+      "title": "Veterinaria",
+      "description": "Control de pacientes para citas médicas."
+    }
+  ],
+  "projectButton": "Saber más",
+  "projectAlt": "Captura de pantalla del proyecto",
+  "studies": [
+    {
+      "date": "2025 - Presente",
+      "date2": "Corporación Unificada Nacional de Educación Superior (CUN)",
+      "title": "Ingeniería de Sistemas",
+      "description": "Noveno semestre cursando actualmente."
+    },
+    {
+      "date": "2020 - 2022",
+      "date2": "Servicio Nacional de Aprendizaje (SENA).",
+      "title": "Tegnología en Ánalisis y Desarrollo de Sistemas de Información",
+      "description": "PHP · JavaScript · TypeScript · Angular · Slim · Java · PostgreSQL · MySQL · Bootstrap · Diseño UI/UX"
+    }
+  ],
+  "studiesButton": "Certificado",
+  "courses": [
+    {
+      "date2": "Udemy",
+      "title": "Python",
+      "description": "Django · Flask · Sqlite",
+      "link": "https://www.udemy.com/certificate/UC-97e8d097-1c41-47b3-9ca7-1c6557961b1f/"
+    }
+  ],
+  "coursesButton": "Certificado",
+  "footer": "© {year} - Juan David Duarte Hernández.",
+  "meta": {
+    "title": "Juan David - Desarrollador Full Stack",
+    "description": "Contacta conmigo para ser parte de tu equipo de trabajo."
+  }
+}

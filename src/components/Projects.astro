@@ -1,4 +1,5 @@
 ---
+import { useTranslations, type Lang } from "../i18n";
 import Github from "./icons/Github.astro";
 import Javascript from "./icons/Javascript.astro";
 import MySQL from "./icons/MySQL.astro";
@@ -10,6 +11,16 @@ import Laravel from "./icons/Laravel.astro";
 import Angular from "./icons/Angular.astro";
 import Vue from "./icons/Vue.astro";
 import Taildwindcss from "./icons/Taildwindcss.astro";
+
+export interface Props {
+  lang: Lang;
+}
+interface ProjectData {
+  title: string;
+  description: string;
+}
+const { lang } = Astro.props;
+const { t, tArray } = useTranslations(lang);
 
 const TAGS = {
   MYSQL: {
@@ -63,75 +74,57 @@ const TAGS = {
     icon: Angular,
   },
 };
+
 const PROJECTS = [
 {
-    title: "Users App",
-    description: "Gestión de usuarios, autenticación, administracion de posts.",
     link: "https://github.com/DevJuanDuarte/usuarios_frontend",
     github: "https://github.com/DevJuanDuarte/usuarios_frontend",
     image: "/projects/login.png",
     tags: [TAGS.ANGULAR, TAGS.PHP, TAGS.MYSQL, TAGS.TAILDWINDCSS],
   },
   {
-    title: "Papelería",
-    description: "Control de inventario para la administración de una papelería.",
     link: "https://github.com/DevJuanDuarte/libreria_app",
     github: "https://github.com/DevJuanDuarte/libreria_app",
     image: "/projects/libreria.png",
     tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.MYSQL, TAGS.TAILDWINDCSS],
   },
   {
-    title: "Bienes Raices",
-    description:
-      "Administracion de venta de bienes raices, informe de ventas, precios, vendedores y bienes.",
     link: "https://github.com/DevJuanDuarte/Bienes_Raices",
     github: "https://github.com/devjuanduarte/Bienes_Raices",
     image: "/projects/bienesraices.png",
     tags: [TAGS.PHP, TAGS.MYSQL, TAGS.JS, TAGS.SASS],
   },
-  
   {
-    title: " Veterinaria",
-    description: "Control de pacientes para citas medicas.",
     link: "https://github.com/DevJuanDuarte/citas-react",
     github: "https://github.com/DevJuanDuarte/citas-react",
     image: "/projects/vetcontrol.png",
     tags: [TAGS.REACT],
   },
-  
 ];
+
+const projectsData = tArray<ProjectData>("projects");
 ---
 
 <div class="grid gap-6 p-6 lg:grid-cols-2">
-  {PROJECTS.map(({ image, title, description, tags, link }) => (
+  {PROJECTS.map(({ image, tags, link }, index) => {
+    const project = projectsData[index];
+    return (
     <div class="flex flex-col max-w-full p-4 border border-gray-700 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-800 dark:border-gray-700 dark:bg-gray-900">
-      <!-- Imagen del proyecto -->
       <img
         loading="lazy"
         class="rounded shadow-lg aspect-video w-full"
         src={image}
-        alt={`Captura de pantalla del proyecto ${title}`}
+        alt={`${t("projectAlt")} ${project?.title}`}
       />
 
-      <!-- Contenido de texto -->
       <div class="flex flex-col mt-4 space-y-4">
         <h3 class="text-2xl font-semibold text-blue-500">
-          {title}
+          {project?.title}
         </h3>
         <p class="text-base font-normal text-gray-300">
-          {description}
+          {project?.description}
         </p>
 
-        <!-- Etiquetas de tecnología -->
-        {/* <ul class="flex gap-2 flex-wrap">
-          {tags.map((tag) => (
-            <li>
-              <span class={`flex items-center gap-1 rounded-full text-xs ${tag.class} px-2 py-1 border border-white/10`}>
-                <tag.icon class="w-5 h-5" />
-              </span>
-            </li>
-          ))}
-        </ul> */}
         <ul class="flex gap-x-2 flex-row mb-2">
       {tags.map((tag) => (
         <li>
@@ -144,17 +137,16 @@ const PROJECTS = [
       ))}
     </ul>
 
-        <!-- Botón "Saber más" en móviles debajo de la descripción -->
         <a
           href={link}
           target="_blank"
           class="flex items-center justify-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
         >
-          Saber más
+          {t("projectButton")}
           <Github class="ml-2 w-5 h-5" />
         </a>
       </div>
     </div>
-  ))}
+    );
+  })}
 </div>
-

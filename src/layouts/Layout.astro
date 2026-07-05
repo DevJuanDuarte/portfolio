@@ -1,18 +1,18 @@
 ---
-// Supports weights 100-900
 import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description: string;
+  lang?: 'es' | 'en';
 }
 
-const { description, title } = Astro.props;
+const { description, title, lang = 'es' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -21,7 +21,6 @@ const { description, title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta
@@ -37,9 +36,9 @@ const { description, title } = Astro.props;
     >
     </div>
   </body>
-  <Header />
+  <Header lang={lang} />
   <slot />
-  <Footer />
+  <Footer lang={lang} />
 </html>
 
 <style is:global>
@@ -65,15 +64,14 @@ const { description, title } = Astro.props;
   }
 
   .typewriter {
-    overflow: hidden; /* Hide the overflowing text */
-    white-space: nowrap; /* Prevent text wrapping */
-    letter-spacing: 1px; /* Add some letter spacing for better visibility */
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 1px;
     animation:
       typing 3.5s steps(40, end),
       blink-caret 0.75s step-end infinite;
   }
 
-  /* Animation for typing effect */
   @keyframes typing {
     from {
       width: 0;
@@ -83,7 +81,6 @@ const { description, title } = Astro.props;
     }
   }
 
-  /* Animation for blinking caret */
   @keyframes blink-caret {
     from,
     to {

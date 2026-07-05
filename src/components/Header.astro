@@ -1,3 +1,14 @@
+---
+import { useTranslations, type Lang } from "../i18n";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+export interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const { t } = useTranslations(lang);
+---
+
 <header
   class={`
     flex justify-center items-center
@@ -16,23 +27,24 @@
       px-3
       gap-x-6
       py-1
-      flex flex-row
+      flex flex-row items-center
       bg-black/50
       backdrop-blur-2xl
     `}
   >
     <a
       class="hover:bg-white/10 lg:px-2 rounded-full transition"
-      href="#experiencia">Experiencia</a
+      href="#experiencia">{t("nav.experience")}</a
     >
     <a class="hover:bg-white/10 lg:px-2 rounded-full transition" href="#sobre-mi"
-      >Sobre mí</a
+      >{t("nav.about")}</a
     >
     <a class="hover:bg-white/10 lg:px-2 rounded-full transition" href="#proyectos"
-      >Proyectos</a
+      >{t("nav.projects")}</a
     >
     <a class="hover:bg-white/10 lg:px-2 rounded-full transition" href="#estudios"
-      >Estudios</a
+      >{t("nav.studies")}</a
     >
+    <LanguageSwitcher lang={lang} />
   </nav>
 </header>

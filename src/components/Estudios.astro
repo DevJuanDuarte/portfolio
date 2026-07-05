@@ -1,32 +1,33 @@
 ---
+import { useTranslations, type Lang } from "../i18n";
 import EstudiosItem from "./EstudiosItem.astro";
-const ESTUDIOS = [
-  {
-    date:'2025 - Presente',
-    date2: 'Corporación Unificada Nacional de Educación Superior (CUN)',
-    title:'Ingeniería de Sistemas',
-    description:'Noveno semestre cursando actualmente.',
-    // link:''
-  },
-  {
-    date:'2020 - 2022',
-    date2:'Servicio Nacional de Aprendizaje (SENA).',
-    title:'Tegnología en Ánalisis y Desarrollo de Sistemas de Información',
-    description:' PHP · JavaScript · TypeScript · Angular · Slim · Java · PostgreSQL · MySQL · Bootstrap · Diseño UI/UX',
-    link:'https://drive.google.com/file/d/1E5JU3oPxWzlHrT5PXWts7siU7ZTcHNYT/view?usp=sharing'
-  }
-]
----
 
+export interface Props {
+  lang: Lang;
+}
+interface EstudioData {
+  title: string;
+  description: string;
+  date2: string;
+  link?: string;
+}
+const { lang } = Astro.props;
+const { tArray } = useTranslations(lang);
+const ESTUDIOS = tArray<EstudioData>("studies");
+---
 
 <ol class="relative border-s border-gray-200 ml-3.5">
   {
-    ESTUDIOS.map(estudios => (
+    ESTUDIOS.map((est) => (
     <li class="mb-10 ms-4">
-      <EstudiosItem {...estudios}/>  
+      <EstudiosItem
+        title={est.title}
+        description={est.description}
+        date2={est.date2}
+        link={est.link}
+        lang={lang}
+      />
     </li>
     ))
   }
 </ol>
-
-

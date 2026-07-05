@@ -1,25 +1,25 @@
 ---
-import { useTranslations } from "../i18n";
-import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import LinkedIn from "../components/icons/LinkedIn.astro";
-import Github from "../components/icons/Github.astro";
-import SocialPill from "../components/icons/SocialPill.astro";
-import Mail from "../components/icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Briefcase from "../components/icons/Briefcase.astro";
-import Code from "../components/icons/Code.astro";
-import Projects from "../components/Projects.astro";
-import About from "../components/About.astro";
-import Profile from "../components/icons/Profile.astro";
-import Cv from "../components/icons/Cv.astro";
-import Book from "../components/icons/Book.astro";
-import Estudios from "../components/Estudios.astro";
-import WhatsApp from "../components/icons/WhatsApp.astro";
-import Cursos from "../components/Cursos.astro";
+import { useTranslations } from "../../i18n";
+import Layout from "../../layouts/Layout.astro";
+import Badge from "../../components/Badge.astro";
+import LinkedIn from "../../components/icons/LinkedIn.astro";
+import Github from "../../components/icons/Github.astro";
+import SocialPill from "../../components/icons/SocialPill.astro";
+import Mail from "../../components/icons/Mail.astro";
+import Experience from "../../components/Experience.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Briefcase from "../../components/icons/Briefcase.astro";
+import Code from "../../components/icons/Code.astro";
+import Projects from "../../components/Projects.astro";
+import About from "../../components/About.astro";
+import Profile from "../../components/icons/Profile.astro";
+import Cv from "../../components/icons/Cv.astro";
+import Book from "../../components/icons/Book.astro";
+import Estudios from "../../components/Estudios.astro";
+import WhatsApp from "../../components/icons/WhatsApp.astro";
+import Cursos from "../../components/Cursos.astro";
 
-const lang = 'es';
+const lang = 'en';
 const { t } = useTranslations(lang);
 ---
 
@@ -50,7 +50,7 @@ const { t } = useTranslations(lang);
 
   const btnDescargar = document.getElementById("descargar-cv");
   btnDescargar?.addEventListener("click", () => {
-    const cvUrl = "projects/pdf/JuanDavidDuarteHernandezCV.pdf";
+    const cvUrl = "/projects/pdf/JuanDavidDuarteHernandezCV.pdf";
     window.open(cvUrl, "Juan_Duarte_CV.pdf");
   });
 </script>
@@ -65,7 +65,7 @@ const { t } = useTranslations(lang);
       <img
         class="rounded-full size-40 mb-4"
         src="/images/linkedin_profile.jpeg"
-        alt="Foto de Juan"
+        alt="Juan's photo"
       />
 
       <h1
