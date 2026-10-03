@@ -19,10 +19,16 @@ interface ProjectData {
   title: string;
   description: string;
 }
+interface TagData {
+  name: string;
+  class: string;
+  icon: (_props: Record<string, any>) => any;
+  iconClass?: string;
+}
 const { lang } = Astro.props;
 const { t, tArray } = useTranslations(lang);
 
-const TAGS = {
+const TAGS: Record<string, TagData> = {
   MYSQL: {
     name: "MySQL",
     class: "bg-[#003159] text-white",
@@ -35,42 +41,43 @@ const TAGS = {
   },
   JS: {
     name: "Javascript",
-    class: "bg-[#f0db4f] pb-2 pr-3",
+    class: "bg-[#f0db4f] text-black/80",
     icon: Javascript,
   },
   SASS: {
-    name: "Javascript",
-    class: "bg-[#FFFF]",
+    name: "Sass",
+    class: "bg-white text-black/80",
     icon: Sass,
   },
   REACT: {
     name: "React",
-    class: "bg-[#4567]",
+    class: "bg-[#0b1521] text-white",
     icon: React,
   },
   FIREBASE: {
     name: "Firebase",
-    class: "bg-[#4567]",
+    class: "bg-[#263238] text-white",
     icon: Firebase,
   },
   LARAVEL: {
     name: "Laravel",
-    class: "bg-[#4567]",
+    class: "bg-[#1a1a1a] text-white",
     icon: Laravel,
   },
   VUE: {
     name: "Vue",
-    class: "bg-[#4567]",
+    class: "bg-white text-black/80",
     icon: Vue,
   },
   TAILDWINDCSS: {
-    name: "Taildwindcss",
-    class: "bg-[#4567]",
+    name: "Tailwind CSS",
+    class: "bg-[#0f172a] text-white",
     icon: Taildwindcss,
+    iconClass: "h-3.5 w-6 shrink-0",
   },
   ANGULAR: {
     name: "Angular",
-    class: "bg-[#4567]",
+    class: "bg-[#DD0031] text-white",
     icon: Angular,
   },
 };
@@ -105,33 +112,39 @@ const PROJECTS = [
 const projectsData = tArray<ProjectData>("projects");
 ---
 
-<div class="grid gap-6 p-6 lg:grid-cols-2">
+<div class="grid gap-8 p-6 lg:grid-cols-2" data-reveal-stagger>
   {PROJECTS.map(({ image, tags, link }, index) => {
     const project = projectsData[index];
     return (
-    <div class="flex flex-col max-w-full p-4 border border-gray-200 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-800">
-      <img
-        loading="lazy"
-        class="rounded shadow-lg aspect-video w-full"
-        src={image}
-        alt={`${t("projectAlt")} ${project?.title}`}
-      />
+    <div
+      class="group flex max-w-full flex-col overflow-hidden rounded-2xl border border-line bg-surface-raised shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10"
+      data-reveal-item
+    >
+      <div class="relative aspect-video w-full overflow-hidden">
+        <img
+          loading="lazy"
+          class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+          src={image}
+          alt={`${t("projectAlt")} ${project?.title}`}
+        />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true"></div>
+      </div>
 
-      <div class="flex flex-col mt-4 space-y-4">
-        <h3 class="text-2xl font-semibold text-blue-600 dark:text-white">
+      <div class="flex flex-1 flex-col gap-4 p-5">
+        <h3 class="text-xl font-semibold text-ink lg:text-2xl">
           {project?.title}
         </h3>
-        <p class="text-base font-normal text-gray-700 dark:text-gray-300">
+        <p class="flex-1 text-base font-normal leading-relaxed text-ink-muted">
           {project?.description}
         </p>
 
-        <ul class="flex gap-x-2 flex-row mb-2">
+        <ul class="flex flex-row flex-wrap gap-2">
       {tags.map((tag) => (
         <li>
           <span
-            class={`flex gap-x-4 rounded-full text-xs ${tag.class} size-12 px-2 my-2 border border-gray-300 dark:border-white/10`}
+            class={`flex items-center gap-x-1.5 whitespace-nowrap rounded-full text-xs font-medium ${tag.class} py-1.5 pl-1.5 pr-3 border border-line`}
           >
-            <tag.icon class="size-7" />
+            <tag.icon class={tag.iconClass ?? "size-5 shrink-0"} /> {tag.name}
           </span>
         </li>
       ))}
@@ -140,10 +153,10 @@ const projectsData = tArray<ProjectData>("projects");
         <a
           href={link}
           target="_blank"
-          class="flex items-center justify-center mt-4 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-lg hover:bg-gray-200 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          class="mt-2 flex items-center justify-center gap-2 rounded-lg bg-black border border-white/10 px-4 py-2.5 text-sm font-medium text-white/70 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface-raised"
         >
           {t("projectButton")}
-          <Github class="ml-2 w-5 h-5" />
+          <Github class="w-5 h-5" />
         </a>
       </div>
     </div>

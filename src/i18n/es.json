@@ -3,13 +3,14 @@
     "experience": "Experiencia",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "studies": "Estudios"
+    "studies": "Estudios",
+    "courses": "Cursos"
   },
   "hero": {
     "available": "Disponible",
     "role": "Desarrollador Full Stack",
     "location": "Bucaramanga, Colombia.",
-    "typewriter": "+3 años de experiencia",
+    "typewriter": "+4 años de experiencia",
     "cv": "Ver CV",
     "linkedin": "LinkedIn",
     "whatsapp": "WhatsApp",
@@ -70,7 +71,7 @@
       "date": "2025 - Presente",
       "date2": "Corporación Unificada Nacional de Educación Superior (CUN)",
       "title": "Ingeniería de Sistemas",
-      "description": "Noveno semestre cursando actualmente."
+      "description": "Décimo semestre cursando actualmente."
     },
     {
       "date": "2020 - 2022",

@@ -1,7 +1,9 @@
 ---
 import "@fontsource-variable/onest";
+import "../styles/tokens.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BackgroundLayers from "../components/BackgroundLayers.astro";
 interface Props {
   title: string;
   description: string;
@@ -40,15 +42,17 @@ const { description, title, lang = 'es' } = Astro.props;
       })();
     </script>
   </head>
-  <body class="bg-white dark:bg-neutral-950 transition-colors duration-300">
-    <div
-      class="absolute top-0 z-[-2] size-full bg-gradient-to-b from-blue-50/80 to-transparent dark:from-transparent dark:to-transparent dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(40,70,198,0.4),rgba(255,255,255,0))]"
-    >
-    </div>
+  <body class="bg-surface text-ink transition-colors duration-300">
+    <BackgroundLayers />
+    <Header lang={lang} />
+    <slot />
+    <Footer lang={lang} />
+
+    <script>
+      import { initScroll } from "../scripts/scroll";
+      initScroll();
+    </script>
   </body>
-  <Header lang={lang} />
-  <slot />
-  <Footer lang={lang} />
 </html>
 
 <style is:global>

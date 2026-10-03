@@ -3,13 +3,14 @@
     "experience": "Experience",
     "about": "About me",
     "projects": "Projects",
-    "studies": "Studies"
+    "studies": "Studies",
+    "courses": "Courses"
   },
   "hero": {
     "available": "Available",
     "role": "Full Stack Developer",
     "location": "Bucaramanga, Colombia.",
-    "typewriter": "+3 years of experience",
+    "typewriter": "+4 years of experience",
     "cv": "View Resume",
     "linkedin": "LinkedIn",
     "whatsapp": "WhatsApp",
@@ -70,7 +71,7 @@
       "date": "2025 - Present",
       "date2": "Corporación Unificada Nacional de Educación Superior (CUN)",
       "title": "Systems Engineering",
-      "description": "Ninth semester currently in progress."
+      "description": "Tenth semester currently in progress."
     },
     {
       "date": "2020 - 2022",

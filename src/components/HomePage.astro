@@ -1,0 +1,77 @@
+---
+import { useTranslations, type Lang } from "../i18n";
+import Layout from "../layouts/Layout.astro";
+import Hero from "./Hero.astro";
+import SectionContainer from "./SectionContainer.astro";
+import Briefcase from "./icons/Briefcase.astro";
+import Code from "./icons/Code.astro";
+import Projects from "./Projects.astro";
+import About from "./About.astro";
+import Profile from "./icons/Profile.astro";
+import Book from "./icons/Book.astro";
+import Estudios from "./Estudios.astro";
+import Cursos from "./Cursos.astro";
+import Experience from "./Experience.astro";
+
+export interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const { t } = useTranslations(lang);
+---
+
+<Layout title={t("meta.title")} description={t("meta.description")} lang={lang}>
+  <main class="relative px-4">
+    <Hero lang={lang} />
+
+    <SectionContainer id="experiencia" class="py-16">
+      <h2
+        class="text-section-title mb-8 flex items-center gap-x-3 font-semibold text-ink"
+        data-reveal
+      >
+        <Briefcase class="size-7 text-accent" /> {t("sections.experience")}
+      </h2>
+      <Experience lang={lang} />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi" class="py-16">
+      <h2
+        class="text-section-title mb-8 flex items-center gap-x-3 font-semibold text-ink"
+        data-reveal
+      >
+        <Profile class="size-7 text-accent" /> {t("sections.about")}
+      </h2>
+      <About lang={lang} />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos" class="py-16" wide>
+      <h2
+        class="text-section-title mb-8 flex items-center gap-x-3 font-semibold text-ink"
+        data-reveal
+      >
+        <Code class="size-7 text-accent" /> {t("sections.projects")}
+      </h2>
+      <Projects lang={lang} />
+    </SectionContainer>
+
+    <SectionContainer id="estudios" class="py-16">
+      <h2
+        class="text-section-title mb-8 flex items-center gap-x-3 font-semibold text-ink"
+        data-reveal
+      >
+        <Book class="size-7 text-accent" /> {t("sections.studies")}
+      </h2>
+      <Estudios lang={lang} />
+    </SectionContainer>
+
+    <SectionContainer id="cursos" class="py-16">
+      <h2
+        class="text-section-title mb-8 flex items-center gap-x-3 font-semibold text-ink"
+        data-reveal
+      >
+        <Book class="size-7 text-accent" /> {t("sections.courses")}
+      </h2>
+      <Cursos lang={lang} />
+    </SectionContainer>
+  </main>
+</Layout>

@@ -1,0 +1,11 @@
+---
+export interface Props {
+  speed?: number;
+  class?: string;
+}
+const { speed = 0.2, class: className = "" } = Astro.props;
+---
+
+<div data-parallax-speed={speed} class={className}>
+  <slot />
+</div>

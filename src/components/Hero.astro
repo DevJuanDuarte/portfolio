@@ -1,0 +1,86 @@
+---
+import { useTranslations, type Lang } from "../i18n";
+import Badge from "./Badge.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Github from "./icons/Github.astro";
+import SocialPill from "./icons/SocialPill.astro";
+import Mail from "./icons/Mail.astro";
+import Cv from "./icons/Cv.astro";
+import WhatsApp from "./icons/WhatsApp.astro";
+
+export interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const { t } = useTranslations(lang);
+---
+
+<script>
+  import { initTypewriter, initCvDownload } from "../scripts/typewriter";
+  initTypewriter();
+  initCvDownload();
+</script>
+
+<section
+  id="contacto"
+  class="relative mx-auto flex w-full max-w-[1120px] flex-col-reverse items-center gap-10 px-4 pb-28 pt-16 lg:min-h-[90vh] lg:flex-row lg:items-center lg:justify-between lg:pt-10"
+>
+  <div class="flex max-w-xl flex-col items-center text-center lg:items-start lg:text-left" data-hero-stagger>
+    <div class="pb-6" data-hero-item>
+      <a href="https://linkedin.com/in/juan-dev-contact" target="_blank"
+        ><Badge>{t("hero.available")}</Badge></a
+      >
+    </div>
+
+    <h1
+      class="text-hero font-bold text-ink"
+      data-hero-item
+    >
+      Juan David Duarte
+    </h1>
+
+    <h2 class="mt-6 text-xl text-ink-muted lg:text-2xl" data-hero-item>
+      <div class="font-medium text-accent">{t("hero.role")}</div>
+      <div class="text-accent/80 typewriter" data-phrase={t("hero.typewriter")}></div>
+      <div>{t("hero.location")}</div>
+    </h2>
+
+    <nav class="mt-10 flex flex-wrap justify-center gap-2 lg:justify-start" data-hero-item>
+      <SocialPill id="descargar-cv">
+        <Cv class="size-4 md:size-6 cursor-pointer" /> {t("hero.cv")}
+      </SocialPill>
+
+      <SocialPill
+        href="https://linkedin.com/in/juan-dev-contact"
+        target="_blank"
+      >
+        <LinkedIn class="size-4 md:size-6" /> {t("hero.linkedin")}
+      </SocialPill>
+
+      <SocialPill href="https://wa.me/573027342616">
+        <WhatsApp class="size-4 md:size-7" /> {t("hero.whatsapp")}
+      </SocialPill>
+
+      <SocialPill href="mailto:juan.devcontact@gmail.com">
+        <Mail class="size-4 md:size-7" /> {t("hero.email")}
+      </SocialPill>
+
+      <SocialPill href="https://github.com/DevJuanDuarte" target="_blank">
+        <Github class="size-4 md:size-6" /> {t("hero.github")}
+      </SocialPill>
+    </nav>
+  </div>
+
+  <div class="relative shrink-0" data-mouse-parallax data-mouse-parallax-strength="14">
+    <div
+      class="absolute -inset-6 -z-10 rounded-full bg-gradient-to-br from-glow-1/30 via-glow-3/20 to-glow-2/20 blur-2xl"
+      aria-hidden="true"
+    >
+    </div>
+    <img
+      class="size-40 rounded-full border-4 border-surface-raised object-cover shadow-xl md:size-56 lg:size-64"
+      src="/images/linkedin_profile.jpeg"
+      alt={lang === "es" ? "Foto de Juan" : "Juan's photo"}
+    />
+  </div>
+</section>

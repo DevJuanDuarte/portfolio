@@ -1,0 +1,33 @@
+:root {
+  --color-surface: 246 243 238;
+  --color-surface-raised: 255 255 255;
+  --color-ink: 23 20 18;
+  --color-ink-muted: 96 90 83;
+  --color-accent: 79 70 229;
+  --color-accent-soft: 224 222 253;
+  --color-accent-contrast: 255 255 255;
+  --color-line: 214 207 197;
+  --color-success-bg: 209 250 229;
+  --color-success-text: 4 120 87;
+
+  --color-glow-1: 99 102 241;
+  --color-glow-2: 244 114 94;
+  --color-glow-3: 168 85 247;
+}
+
+:root.dark {
+  --color-surface: 15 13 17;
+  --color-surface-raised: 24 21 26;
+  --color-ink: 243 241 236;
+  --color-ink-muted: 168 161 155;
+  --color-accent: 142 149 251;
+  --color-accent-soft: 49 46 92;
+  --color-accent-contrast: 15 13 17;
+  --color-line: 54 49 46;
+  --color-success-bg: 6 78 59;
+  --color-success-text: 167 243 208;
+
+  --color-glow-1: 99 102 241;
+  --color-glow-2: 244 114 94;
+  --color-glow-3: 168 85 247;
+}
