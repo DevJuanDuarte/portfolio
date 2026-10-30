@@ -26,7 +26,8 @@ export function initTypewriter() {
 export function initCvDownload() {
   const btnDescargar = document.getElementById("descargar-cv");
   btnDescargar?.addEventListener("click", () => {
-    const cvUrl = "/projects/pdf/JuanDavidDuarteHernandezCV.pdf";
-    window.open(cvUrl, "Juan_Duarte_CV.pdf");
+    const lang = document.documentElement.lang === "en" ? "en" : "es";
+    const cvUrl = `/projects/pdf/cv_juan_david_duarte_hernandez_${lang}.pdf`;
+    window.open(cvUrl, "_blank");
   });
 }
